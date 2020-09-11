@@ -1,6 +1,6 @@
 export const GOOGLE_SIGN_IN_CONFIG = {
   webClientId:
-    '297766130098-m68tu9o0b0kgoi5aut7k3mepd1lotbn3.apps.googleusercontent.com',
+    '881567815237-k080v6bs8thcvavm2dedfaoqmoo6t4eu.apps.googleusercontent.com/',
   offlineAccess: true,
 };
 
