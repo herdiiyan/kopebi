@@ -22,8 +22,8 @@ function Coupon(props) {
           <InputCoupon />
           {coupons.map((coupon) => (
             <ListItem
-              key={coupon.code}
-              title={coupon.code.toUpperCase()}
+              key={coupon}
+              title={coupon.toUpperCase()}
               type="underline"
               leftIcon={
                 <Avatar
@@ -41,7 +41,7 @@ function Coupon(props) {
               rightIcon={{
                 name: 'x',
                 size: 19,
-                onPress: () => handleDelete(coupon.code),
+                onPress: () => handleDelete(coupon),
               }}
               titleProps={{
                 h6: true,
