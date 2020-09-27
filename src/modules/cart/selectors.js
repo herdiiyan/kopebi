@@ -15,7 +15,7 @@ export const cartSelector = createSelector(
 
 /**
  * Cart total selector
- * @package rn_oreo
+ * @package kopebi
  * @since 1.0.0
  */
 export const cartTotalSelector = createSelector(
@@ -25,7 +25,7 @@ export const cartTotalSelector = createSelector(
 
 /**
  * Cart key selector
- * @package rn_oreo
+ * @package kopebi
  * @since 1.0.0
  */
 export const cartKeySelector = createSelector(rootCart, cart => cart.get('cart_key'));
@@ -67,7 +67,7 @@ export const loadingUpdateQuantitySelector = createSelector(
 
 /**
  * Cart coupons applied selector
- * @package rn_oreo
+ * @package kopebi
  * @since 1.0.0
  */
 export const couponsAppliedSelector = createSelector(
@@ -77,7 +77,7 @@ export const couponsAppliedSelector = createSelector(
 
 /**
  * Cart coupons add loading selector
- * @package rn_oreo
+ * @package kopebi
  * @since 1.0.0
  */
 export const couponsAddLoadingSelector = createSelector(
@@ -87,7 +87,7 @@ export const couponsAddLoadingSelector = createSelector(
 
 /**
  * Cart coupons delete loading selector
- * @package rn_oreo
+ * @package kopebi
  * @since 1.0.0
  */
 export const couponsDeleteLoadingSelector = createSelector(

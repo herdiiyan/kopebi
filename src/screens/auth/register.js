@@ -272,7 +272,7 @@ class RegisterScreen extends React.Component {
                     onPress={this.handleRegister}
                     loading={loading || pending}
                   />
-                  <SocialMethods style={styles.viewAccount} />
+                  {/* <SocialMethods style={styles.viewAccount} /> */}
                   <Text
                     medium
                     style={styles.textHaveAccount}
