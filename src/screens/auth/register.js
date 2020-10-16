@@ -152,13 +152,10 @@ class RegisterScreen extends React.Component {
           this.setState({
             confirmResult,
           });
-          console.log('KENA 1');
         } else {
-          console.log('KENA 2');
           this.register();
         }
       } else {
-        console.log('KENA 3');
         this.register();
       }
     } catch (e) {
