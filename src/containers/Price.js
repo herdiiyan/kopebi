@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
     color: red,
   },
   viewBadge: {
+    flexDirection: "column-reverse",
     marginHorizontal: margin.small,
   },
   badge: {

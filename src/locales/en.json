@@ -84,7 +84,7 @@
     "text_facebook": "Sign In with Facebook",
     "text_google": "Sign In with Google",
     "text_have_account": "Don't have an account?",
-    "text_agree_register": "I'd like to receive exclusive offers and style advice by email and sms from Oreo",
+    "text_agree_register": "I'd like to receive exclusive offers and style advice by email and sms from Kopebi",
     "text_already_account": "Already have an account?",
     "text_description_forgot": "Enter your account email address and we'll send instructions on how to reset your password",
     "text_description_login_mobile": "Login with your phone number",
@@ -197,11 +197,11 @@
   },
   "getting": {
     "text_title_1": "Shopping Smart",
-    "text_title_2": "Focus UX",
+    "text_title_2": "Order",
     "text_title_3": "Creative Concept",
-    "text_subtitle_1": "Welcome to OREO Store",
-    "text_subtitle_2": "Personalization of User Experience",
-    "text_subtitle_3": "Discovering new horizons"
+    "text_subtitle_1": "Welcome to KOPEBI Store",
+    "text_subtitle_2": "Order products from your home",
+    "text_subtitle_3": "Support local brands"
   },
   "profile": {
     "text_hello": "Hello, {{name}}",
@@ -270,7 +270,7 @@
     "text_privacy_title_2": "2. THIRD PARTY WEBSITES",
     "text_privacy_description_2": "Our Website can contain links to and from the websites of our partner boutiques, advertisers, and affiliates, amongst others. If you follow a link to any of these websites, please note that this Privacy Policy does not apply to those websites. We are not responsible or liable for the privacy policies or practices of those websites, so please check their policies before you submit any personal data to those websites.",
 
-    "text_name_about": "Oreo React Native\nTemplate",
+    "text_name_about": "Kopebi React Native\nTemplate",
     "text_research": "Research",
     "text_about_description": "This Privacy Policy sets out the information that we collect, the reasons for which we collect that information, and how we can use and share that information.",
 

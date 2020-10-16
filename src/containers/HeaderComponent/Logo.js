@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
 
-import {TouchableOpacity, Image} from 'react-native';
+import {TouchableOpacity, Image, Text} from 'react-native';
 
 import {listImageSelector} from 'src/modules/common/selectors';
 import {homeDrawer} from 'src/config/navigator';
@@ -11,7 +11,8 @@ const Logo = ({images, ...rest}) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity onPress={() => navigation.navigate(homeDrawer.home_tab)}>
-      <Image source={images.logo} resizeMode="stretch" {...rest} />
+      <Text>KOPEBI</Text>
+      {/* <Image source={images.logo} resizeMode="stretch" {...rest} /> */}
     </TouchableOpacity>
   );
 };

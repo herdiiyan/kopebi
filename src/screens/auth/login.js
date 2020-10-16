@@ -104,14 +104,14 @@ class LoginScreen extends React.Component {
                     medium>
                     {t('auth:text_forgot')}
                   </Text>
-                  <View style={[styles.viewOr, styles.margin]}>
+                  {/* <View style={[styles.viewOr, styles.margin]}>
                     <Divider style={styles.divOr} />
                     <Text style={styles.textOr} colorThird>
                       {t('auth:text_or')}
                     </Text>
                     <Divider style={styles.divOr} />
-                  </View>
-                  <SocialMethods style={styles.viewSocial} />
+                  </View> */}
+                  {/* <SocialMethods style={styles.viewSocial} /> */}
                 </Container>
               </ScrollView>
             </KeyboardAvoidingView>

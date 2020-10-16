@@ -2,7 +2,7 @@
  *
  * Main app
  *
- * App Name:          Oreo fashion
+ * App Name:          Kopebi
  * Author:            Rnlab.io
  *
  * @since             1.0.0
