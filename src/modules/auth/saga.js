@@ -124,6 +124,7 @@ function* signInWithEmailSaga({username, password}) {
         message: e.message,
       },
     });
+    
   }
 }
 
@@ -207,15 +208,11 @@ function* signInWithMobileSaga({tokenId}) {
  * @returns {IterableIterator<*>}
  */
 function* signUpWithEmailSaga({payload}) {
+  console.log("Payload :", payload);
   try {
     const {data} = payload;
-    const language = yield select(languageSelector);
     const {token, user} = yield call(registerWithEmail, data);
-    yield call(showMessage, {
-      message: languages[language].notifications.text_create_user_success,
-      type: 'info',
-    });
-    yield call(doLoginSuccess, token, user, 'otp');
+    yield call(doLoginSuccess, token, user);
   } catch (e) {
     yield call(handleError, e);
     yield put({

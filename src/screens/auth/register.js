@@ -103,23 +103,23 @@ class RegisterScreen extends React.Component {
     const {data} = this.state;
     let payload = data;
     const {country_code} = data;
-    if (enablePhoneNumber) {
-      const currentUser = firebase.auth().currentUser;
+  //   if (enablePhoneNumber) {
+  //     const currentUser = firebase.auth().currentUser;
 
-      const user_phone_number =
-        currentUser?._user?.phoneNumber ??
-        formatPhoneWithCountryCode(data.phone_number, country_code);
-      payload = Object.assign(data, {
-        enable_phone_number: true,
-        digits_phone: user_phone_number,
-        digt_countrycode: data.country_no,
-        digits_phone_no: data.phone_number,
-      });
-    }
-    this.setState({loading: false});
+  //     const user_phone_number =
+  //       currentUser?._user?.phoneNumber ??
+  //       formatPhoneWithCountryCode(data.phone_number, country_code);
+  //     payload = Object.assign(data, {
+  //       enable_phone_number: true,
+  //       digits_phone: user_phone_number,
+  //       digt_countrycode: data.country_no,
+  //       digits_phone_no: data.phone_number,
+  //     });
+  //   }
+  //   this.setState({loading: false});
     this.props.dispatch(signUpWithEmail(payload));
   };
-
+  
   /**
    * Handle User register
    */
@@ -273,7 +273,7 @@ class RegisterScreen extends React.Component {
                   </View>
                   <Button
                     title={t('auth:text_register')}
-                    onPress={this.handleRegister}
+                    onPress={this.register}
                     loading={loading || pending}
                   />
                   {/* <SocialMethods style={styles.viewAccount} /> */}

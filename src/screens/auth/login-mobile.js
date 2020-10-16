@@ -51,23 +51,23 @@ class LoginMobile extends React.Component {
   }
 
   componentDidMount() {
-    this.unsubscribe = firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({
-          user,
-        });
-      }
+    // this.unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+    //   if (user) {
+    //     this.setState({
+    //       user,
+    //     });
+    //   }
 
-      if (this.state.confirmResult && Platform.OS === 'android') {
-        this.handleLogin(true);
-      }
-    });
+    //   if (this.state.confirmResult && Platform.OS === 'android') {
+    //     this.handleLogin(true);
+    //   }
+    // });
   }
 
   componentWillUnmount() {
-    if (this.unsubscribe) {
-      this.unsubscribe();
-    }
+    // if (this.unsubscribe) {
+    //   this.unsubscribe();
+    // }
   }
 
   /**
@@ -75,24 +75,24 @@ class LoginMobile extends React.Component {
    * @param verify
    * @returns {Promise<void>}
    */
-  handleLogin = async (verify) => {
-    try {
-      if (verify) {
-        this.setState({
-          visibleModal: false,
-        });
-        const idTokenResult = await firebase
-          .auth()
-          .currentUser.getIdTokenResult();
-        this.props.dispatch(signInWithMobile(idTokenResult.token));
-      }
-    } catch (e) {
-      showMessage({
-        message: e.message,
-        type: 'danger',
-      });
-    }
-  };
+  // handleLogin = async (verify) => {
+  //   try {
+  //     if (verify) {
+  //       this.setState({
+  //         visibleModal: false,
+  //       });
+  //       const idTokenResult = await firebase
+  //         .auth()
+  //         .currentUser.getIdTokenResult();
+  //       this.props.dispatch(signInWithMobile(idTokenResult.token));
+  //     }
+  //   } catch (e) {
+  //     showMessage({
+  //       message: e.message,
+  //       type: 'danger',
+  //     });
+  //   }
+  // };
 
   /**
    * Handle login mobile
@@ -205,7 +205,7 @@ class LoginMobile extends React.Component {
                 </Container>
               </ScrollView>
             </KeyboardAvoidingView>
-            <ModalVerify
+            {/* <ModalVerify
               visible={visible}
               confirmation={confirmResult}
               handleVerify={this.handleLogin}
@@ -221,7 +221,7 @@ class LoginMobile extends React.Component {
                   ? phone_number
                   : country_no + phone_number
               }
-            />
+            /> */}
           </ThemedView>
         )}
       </ThemeConsumer>
