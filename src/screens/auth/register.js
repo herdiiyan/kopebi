@@ -124,6 +124,7 @@ class RegisterScreen extends React.Component {
    * Handle User register
    */
   handleRegister = async () => {
+    console.log('HANDLE REGISTER');
     this.setState({
       loading: true,
     });
