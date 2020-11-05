@@ -28,7 +28,7 @@ import {addWishList, removeWishList} from 'src/modules/common/actions';
 import {wishListSelector} from 'src/modules/common/selectors';
 import {isLoginSelector} from 'src/modules/auth/selectors';
 
-import {homeTabs, mainStack, authStack} from 'src/config/navigator';
+import {homeTabs, mainStack, authStack, rootSwitch} from 'src/config/navigator';
 
 import {margin} from 'src/components/config/spacing';
 
@@ -172,7 +172,7 @@ function CartScreen(props) {
                   title={t('cart:text_go_checkout')}
                   onPress={() => {
                     if (siteConfigs?.enable_guest_checkout === 'no' && !isLogin) {
-                      navigation.navigate(authStack.login);
+                      navigation.navigate(rootSwitch.auth, {screen: authStack.login});
                     } else {
                       navigation.navigate(mainStack.webview_checkout);
                       // navigation.navigate(
