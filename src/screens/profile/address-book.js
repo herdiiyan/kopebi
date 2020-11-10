@@ -78,7 +78,7 @@ class AddressBookScreen extends React.Component {
       t,
       auth: {pendingUpdateCustomer},
     } = this.props;
-
+    console.log(shipping)
     return (
       <ThemedView isFullView>
         <Header

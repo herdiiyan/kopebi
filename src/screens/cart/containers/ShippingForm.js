@@ -21,6 +21,7 @@ class ShippingAddress extends React.Component {
       return null;
     }
 
+    console.log(data)
     return (
       <View>
         <Row style={styles.row}>
@@ -78,10 +79,10 @@ class ShippingAddress extends React.Component {
         <Row style={styles.row}>
           <Col>
             <Input
-              error={errors && errors.get('address_2')}
-              label={t('inputs:text_address_2')}
-              value={data.get('address_2')}
-              onChangeText={(value) => onChange('address_2', value)}
+              error={errors && errors.get('city')}
+              label={t('inputs:text_city')}
+              value={data.get('city')}
+              onChangeText={(value) => onChange('city', value)}
             />
           </Col>
         </Row>
@@ -89,10 +90,10 @@ class ShippingAddress extends React.Component {
         <Row style={styles.row}>
           <Col>
             <Input
-              error={errors && errors.get('city')}
-              label={t('inputs:text_city')}
-              value={data.get('city')}
-              onChangeText={(value) => onChange('city', value)}
+              error={errors && errors.get('address_2')}
+              label={t('inputs:text_address_2')}
+              value={data.get('address_2')}
+              onChangeText={(value) => onChange('address_2', value)}
             />
           </Col>
           <Col>
