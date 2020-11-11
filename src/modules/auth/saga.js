@@ -433,6 +433,7 @@ function* updateCustomerSaga({payload}) {
   try {
     const {data, cb} = payload;
     const userID = yield select(userIdSelector);
+    console.log('user id', userID)
     yield call(updateCustomer, userID, data);
     yield put({
       type: Actions.UPDATE_CUSTOMER_SUCCESS,

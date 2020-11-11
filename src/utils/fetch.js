@@ -15,7 +15,7 @@ const get = (url, options = {}) => {
     const isWC = url.indexOf('/wc') === 0;
     const isQuery = url.indexOf('?') >= 0;
     const isAuth =
-      url.indexOf('/rnlab-app-control') === 0 || url.indexOf('/dokan') === 0;
+      url.indexOf('/mobile-builder') === 0 || url.indexOf('/dokan') === 0;
 
     if (isWC) {
       baseURL = `${baseURL}${isQuery ? '&' : '?'}consumer_key=${
@@ -69,7 +69,7 @@ const post = (url, data, method = 'POST') => {
     const isDigits = url.indexOf('/digits') === 0;
     const isQuery = url.indexOf('?') >= 0;
     const isAuth =
-      url.indexOf('/rnlab-app-control') === 0 || url.indexOf('/dokan') === 0;
+      url.indexOf('/mobile-builder') === 0 || url.indexOf('/dokan') === 0;
 
     if (isWC || isDigits) {
       baseURL = `${baseURL}${isQuery ? '&' : '?'}consumer_key=${
