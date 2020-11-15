@@ -40,6 +40,7 @@ class AddressBookScreen extends React.Component {
   handleSave = () => {
     const {t, dispatch} = this.props;
     const {shipping} = this.state;
+    console.log("data : ", shipping);
     const errors = validatorAddress(shipping, 'shipping');
     if (errors.size > 0) {
       this.setState({
@@ -54,7 +55,7 @@ class AddressBookScreen extends React.Component {
       this.setState({
         errors: {},
       });
-      dispatch(updateCustomer({shipping}, this.updateAddressData));
+      dispatch(updateCustomer({billing: shipping}, this.updateAddressData));
     }
   };
 

@@ -44,7 +44,7 @@ export const changeEmail = ({u_password, u_email}) =>
   request.patch('users/change-email', {u_password, u_email});
 
 export const updateCustomer = (user_id, data) =>
-  request.put(`/${PLUGIN_NAME}/v1/customers/${user_id}`, data);
+  request.put(`/wc/v3/customers/${user_id}`, data);
 
 export const getCustomer = (user_id) =>
   request.get(`/wc/v3/customers/${user_id}`);

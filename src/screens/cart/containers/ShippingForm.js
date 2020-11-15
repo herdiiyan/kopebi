@@ -137,7 +137,7 @@ class ShippingAddress extends React.Component {
 
 ShippingAddress.defaultProps = {
   errors: Map(),
-  type: 'shipping',
+  type: 'billing',
 };
 
 const styles = StyleSheet.create({
