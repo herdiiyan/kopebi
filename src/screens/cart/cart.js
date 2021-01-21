@@ -13,6 +13,7 @@ import Empty from 'src/containers/Empty';
 import CartTotal from './containers/CartTotal';
 import CartItem from './containers/CartItem';
 import Coupon from './containers/Coupon';
+import Credit from './containers/Credit';
 
 import {getCart, removeFromCart, updateQuantityCart} from 'src/modules/cart/actions';
 import {
@@ -106,6 +107,11 @@ function CartScreen(props) {
     );
   };
 
+  const _handleCreditBtn = () => {
+    // alert('Apakah anda goblok?')
+    return <Credit/>
+  }
+
   const goToProduct = (productId) => navigation.navigate(mainStack.product, {id: productId, type: 'product'});
 
   return (
@@ -168,6 +174,7 @@ function CartScreen(props) {
                 }
               />
               <Container style={styles.footerScrollview}>
+                <Button title='Credit' onPress={_handleCreditBtn}/>
                 <Button
                   title={t('cart:text_go_checkout')}
                   onPress={() => {

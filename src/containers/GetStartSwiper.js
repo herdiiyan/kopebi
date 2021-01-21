@@ -16,7 +16,7 @@ import {margin} from 'src/components/config/spacing';
 
 const {width} = Dimensions.get('window');
 const WIDTH_IMAGE = width;
-const HEIGHT_IMAGE = (WIDTH_IMAGE * 390) / 375;
+const HEIGHT_IMAGE = (WIDTH_IMAGE * 330) / 375;
 
 class GetStartSwiper extends React.Component {
   constructor(props) {
@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   image: {
+    marginTop: 150,
     width: WIDTH_IMAGE,
     height: HEIGHT_IMAGE,
   },

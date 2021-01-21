@@ -1,7 +1,7 @@
-export const API = 'https://kopebitest.com';
+export const API = 'https://kopebi.com';
 
-export const CONSUMER_KEY = 'ck_66ba9f876d6dd8db9a15daac39eecbd53579e0c8';
-export const CONSUMER_SECRET = 'cs_b45e5895f2af5e4ec9b51a46dc556fd572c85c49';
+export const CONSUMER_KEY = 'ck_b76d858345d847c7f06da3a20c9665c0698dfb60';
+export const CONSUMER_SECRET = 'cs_6f1153273be387dbe3e2d824ac2e5f6f05816343';
 
 export default {
   API_ENDPOINT: API,

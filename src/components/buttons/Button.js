@@ -198,6 +198,7 @@ Button.defaultProps = {
   size: 'big',
   buttonStyle: {
     borderRadius: 3,
+    marginBottom:10
   },
   disabled: false,
   raised: false,
