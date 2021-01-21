@@ -16,10 +16,12 @@ import {fetchCountries} from 'src/modules/common/actions';
 import {fromCharCode} from 'src/utils/string';
 import {padding, margin} from 'src/components/config/spacing';
 
+import province from '../../../mock/province.json';
+
 class InputCountry extends React.Component {
   constructor(props, context) {
     super(props, context);
-    const {country, value} = props;
+    const {country, value, city} = props;
     const countries = country.get('data').toJS();
 
     const selected = countries.find((data) => data.code === value);
@@ -27,8 +29,10 @@ class InputCountry extends React.Component {
     this.state = {
       visible: false,
       visibleState: false,
+      visibleCity: false,
       search: '',
       states: selected && selected.states ? selected.states : [],
+      citySelected: city ? city : null
     };
   }
 
@@ -41,6 +45,11 @@ class InputCountry extends React.Component {
       dispatch(fetchCountries());
     }
   }
+  componentDidUpdate(prevProps, prevState){
+    if (this.props.city !== prevProps.city) {
+      this.setState({citySelected: this.props.city})
+    }
+  }
 
   setModalVisible = (visible) => {
     this.setState({
@@ -51,6 +60,12 @@ class InputCountry extends React.Component {
   setModalStateVisible = (visible) => {
     this.setState({
       visibleState: visible,
+    });
+  };
+
+  setModalCityVisible = (visible) => {
+    this.setState({
+      visibleCity: visible,
     });
   };
 
@@ -80,12 +95,19 @@ class InputCountry extends React.Component {
     this.setModalStateVisible(false);
   };
 
+  handleCitySelect = (value) => {
+    const {onChange} = this.props;
+    onChange('city', value);
+    this.setModalCityVisible(false);
+  };
+
   updateSearch = (search) => {
     this.setState({search});
   };
+  
 
   render() {
-    const {visible, visibleState, search, states} = this.state;
+    const {visible, visibleState, search, states, citySelected, visibleCity} = this.state;
     const {label, value, country, error, state, t} = this.props;
 
     const countries = country.get('data').toJS();
@@ -98,6 +120,16 @@ class InputCountry extends React.Component {
     );
     const findState = states.find((valueState) => valueState.code === state);
     const nameState = findState ? findState.name : '';
+
+    const dataCity = province.prop.reduce((unique, o) => {
+      if(!unique.some(obj => obj.kota_kabupaten === o.kota_kabupaten)) {
+        unique.push(o);
+      }
+      return unique;
+    },[]);
+    console.log(dataCity.filter(e => e.province === nameState))
+
+    
     return (
       <>
         <InputSelectValue
@@ -120,6 +152,13 @@ class InputCountry extends React.Component {
               onChangeText={(valueState) => this.handleStateSelect(valueState)}
             />
           )}
+        </View>
+        <View style={{marginTop: margin.base}}>
+            <InputSelectValue
+              onPress={() => this.setModalCityVisible(true)}
+              label={t('inputs:text_city')}
+              value={citySelected}
+            />
         </View>
 
         <Modal
@@ -197,6 +236,30 @@ class InputCountry extends React.Component {
                         }
                       : null
                   }
+                  containerStyle={styles.item}
+                />
+              )}
+            />
+          </View>
+        </Modal>
+        <Modal
+          visible={visibleCity}
+          setModalVisible={this.setModalCityVisible}
+          ratioHeight={0.5}>
+          <View
+            style={{
+              paddingHorizontal: padding.big,
+              paddingBottom: padding.base,
+            }}>
+            <FlatList
+              data={dataCity.filter(e => e.province === nameState)}
+              keyExtractor={(item) => item.kota_kabupaten}
+              renderItem={({item, index}) => (
+                <ListItem
+                  onPress={() => this.handleCitySelect(item.kota_kabupaten)}
+                  title={fromCharCode(item.kota_kabupaten)}
+                  type="underline"
+                  activeOpacity={1}
                   containerStyle={styles.item}
                 />
               )}

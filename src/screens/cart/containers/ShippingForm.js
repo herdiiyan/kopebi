@@ -61,6 +61,7 @@ class ShippingAddress extends React.Component {
               value={data.get('country')}
               onChange={onChange}
               state={data.get('state')}
+              city={data.get('city')}
             />
           </Col>
         </Row>
@@ -72,17 +73,6 @@ class ShippingAddress extends React.Component {
               label={t('inputs:text_address')}
               value={data.get('address_1')}
               onChangeText={(value) => onChange('address_1', value)}
-            />
-          </Col>
-        </Row>
-
-        <Row style={styles.row}>
-          <Col>
-            <Input
-              error={errors && errors.get('city')}
-              label={t('inputs:text_city')}
-              value={data.get('city')}
-              onChangeText={(value) => onChange('city', value)}
             />
           </Col>
         </Row>
