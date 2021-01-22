@@ -46,6 +46,7 @@ import EditAccount from 'src/screens/profile/edit-account';
 import Downloads from 'src/screens/profile/downloads';
 import Page from 'src/screens/profile/Page';
 import Credit from '../screens/cart/containers/Credit';
+import Cupon from '../screens/cart/containers/Cupon';
 import Thankyou from '../screens/cart/Thankyou';
 
 const Stack = createStackNavigator();
@@ -234,6 +235,11 @@ function MainStack() {
         options={{headerShown: false}}
         name={mainStack.credit}
         component={Credit}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name={mainStack.cupon}
+        component={Cupon}
       />
       <Stack.Screen
         options={{headerShown: false}}

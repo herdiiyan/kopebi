@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-
+import {Alert} from 'react-native'
 import {withTranslation} from 'react-i18next';
 import {WebView} from 'react-native-webview';
 import {ActivityIndicator, StyleSheet, View} from 'react-native';
-import {ThemedView, Header} from 'src/components';
+import {ThemedView, Header, Button} from 'src/components';
 import {TextHeader, IconHeader} from 'src/containers/HeaderComponent';
 
 import {mainStack} from 'src/config/navigator';
@@ -98,6 +98,26 @@ class WebviewCheckout extends Component {
     }
   };
 
+  _handleCreditBtn = (data) => {
+    const {navigation} = this.props;
+    Alert.alert(
+      "Warning!",
+      "Apakah anda pegawai BI?",
+      [
+        {
+          text: 'Tidak',
+          onPress: () => {},
+          style: 'cancel',
+        },
+        {
+          text: 'Ya',
+          onPress: () => navigation.navigate(mainStack.credit, {data: data}),
+        },
+      ],
+      {cancelable: false},
+    );
+  }
+
   render() {
     const {loading, canGoForward} = this.state;
     const {
@@ -141,6 +161,7 @@ class WebviewCheckout extends Component {
             ) : null
           }
         />
+        
         <WebView
           source={{
             uri,
@@ -151,6 +172,7 @@ class WebviewCheckout extends Component {
           style={styles.webView}
           onLoadStart={() => this.setState({loading: false})}
         />
+        {/* <Button title='Credit' onPress={this._handleCreditBtn(cartKey)}/> */}
         {loading && (
           <View style={styles.viewLoading}>
             <ActivityIndicator size="large" />

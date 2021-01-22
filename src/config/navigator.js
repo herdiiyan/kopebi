@@ -61,6 +61,7 @@ export const mainStack = {
   downloads: 'DownloadsScreen',
   page: 'PageScreen',
   credit: 'CreditScreen',
+  cupon: 'CuponScreen',
   thankyou: 'ThankyouScreen'
 };
 

@@ -11,11 +11,11 @@ import { authSelector, shippingAddressSelector, userSelector } from '../../../mo
 import { cartSelector, cartTotalSelector } from '../../../modules/cart/selectors';
 
 // create a component
-const Credit = (props) => {
+const Cupon = (props) => {
     const {user, shippingAddress} = props;
     const refGForm = useRef(null)
     const [loading, setLoading] = useState(true)
-    const [url, setUrl] = useState(`https://docs.google.com/forms/d/e/1FAIpQLSf7xBjv_GQubUHkvrewUvb1NhcGsty7tDi_fj5VLf_D_KoI2A/viewform?usp=sf_link&entry.594239247=${props.route.params.data}&entry.1182562155=${user.display_name}&entry.900887411=${user.user_email}&entry.22132426=${shippingAddress.phone}&entry.540037891=${shippingAddress.address_1}`)
+    const [url, setUrl] = useState(`https://docs.google.com/forms/d/e/1FAIpQLSc2iUn9SSYuLkm4F7STOyT-Ll0m65VznAVY6Asu1naE8LGmvg/viewform?usp=sf_link`)
     const handleResponse = (req) => {
         if (req.url.includes('formResponse')) {
             props.navigation.navigate(mainStack.thankyou)
@@ -92,4 +92,4 @@ const mapStateToProps = (state) => ({
     // isLogin: isLoginSelector(state),
   });
 //make this component available to the app
-export default connect(mapStateToProps, null)(Credit);
+export default connect(mapStateToProps, null)(Cupon);
