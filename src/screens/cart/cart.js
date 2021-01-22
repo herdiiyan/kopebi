@@ -13,7 +13,6 @@ import Empty from 'src/containers/Empty';
 import CartTotal from './containers/CartTotal';
 import CartItem from './containers/CartItem';
 import Coupon from './containers/Coupon';
-import Credit from './containers/Credit';
 
 import {getCart, removeFromCart, updateQuantityCart} from 'src/modules/cart/actions';
 import {
@@ -108,8 +107,22 @@ function CartScreen(props) {
   };
 
   const _handleCreditBtn = () => {
-    // alert('Apakah anda goblok?')
-    return <Credit/>
+    Alert.alert(
+      "Warning!",
+      "Apakah anda pegawai BI?",
+      [
+        {
+          text: 'Tidak',
+          onPress: () => {},
+          style: 'cancel',
+        },
+        {
+          text: 'Ya',
+          onPress: () => navigation.navigate(mainStack.credit),
+        },
+      ],
+      {cancelable: false},
+    );
   }
 
   const goToProduct = (productId) => navigation.navigate(mainStack.product, {id: productId, type: 'product'});

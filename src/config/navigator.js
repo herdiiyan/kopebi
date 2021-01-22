@@ -60,6 +60,8 @@ export const mainStack = {
   edit_account: 'EditAccountScreen',
   downloads: 'DownloadsScreen',
   page: 'PageScreen',
+  credit: 'CreditScreen',
+  thankyou: 'ThankyouScreen'
 };
 
 export const rootSwitch = {

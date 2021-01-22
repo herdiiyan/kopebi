@@ -12,6 +12,13 @@ export const isLoginSelector = createSelector(auth, (data) =>
 /**
  * Get user id
  */
+export const userSelector = createSelector(auth, (data) =>
+  data.get('user'),
+);
+
+/**
+ * Get user id
+ */
 export const userIdSelector = createSelector(auth, (data) =>
   data.getIn(['user', 'ID']),
 );

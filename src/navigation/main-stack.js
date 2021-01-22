@@ -45,6 +45,8 @@ import DemoConfig from 'src/screens/profile/demo-config';
 import EditAccount from 'src/screens/profile/edit-account';
 import Downloads from 'src/screens/profile/downloads';
 import Page from 'src/screens/profile/Page';
+import Credit from '../screens/cart/containers/Credit';
+import Thankyou from '../screens/cart/Thankyou';
 
 const Stack = createStackNavigator();
 
@@ -227,6 +229,16 @@ function MainStack() {
         options={{headerShown: false}}
         name={mainStack.page}
         component={Page}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name={mainStack.credit}
+        component={Credit}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name={mainStack.thankyou}
+        component={Thankyou}
       />
     </Stack.Navigator>
   );

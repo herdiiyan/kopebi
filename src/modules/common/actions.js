@@ -124,6 +124,7 @@ export function fetchShippingMethodsNotCoveredByZone() {
  * @returns {{type: string, payload: {settings: *, configSetting: *, configs: *}}}
  */
 export function fetchSettingSuccess({settings, configs, templates}) {
+  console.log(settings, configs, templates)
   return {
     type: Actions.FETCH_SETTING_SUCCESS,
     payload: {
