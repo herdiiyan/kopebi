@@ -165,7 +165,7 @@ android {
         release {
             storeFile file('kopebi.keystore')
             storePassword 'kopebi'
-            keyAlias 'kopebi-BI'
+            keyAlias 'kopebi-bi'
             keyPassword 'kopebi'
         }
     }
@@ -210,6 +210,7 @@ dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
+    implementation 'com.android.support:multidex:1.0.3'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
