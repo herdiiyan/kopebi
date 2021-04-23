@@ -106,44 +106,6 @@ function CartScreen(props) {
     );
   };
 
-  const _handleCuponBtn = () => {
-    Alert.alert(
-      "Warning!",
-      "Apakah anda pegawai BI?",
-      [
-        {
-          text: 'Tidak',
-          onPress: () => {},
-          style: 'cancel',
-        },
-        {
-          text: 'Ya',
-          onPress: () => navigation.navigate(mainStack.cupon),
-        },
-      ],
-      {cancelable: false},
-    );
-  }
-
-  const _handleCreditBtn = () => {
-    Alert.alert(
-      "Warning!",
-      "Apakah anda pegawai BI?",
-      [
-        {
-          text: 'Tidak',
-          onPress: () => {},
-          style: 'cancel',
-        },
-        {
-          text: 'Ya',
-          onPress: () => navigation.navigate(mainStack.credit, {data : data.c5cc17e395d3049b03e0f1ccebb02b4d ? data.c5cc17e395d3049b03e0f1ccebb02b4d.product_id*Math.floor(Math.random() * 10) + 1:''}),
-        },
-      ],
-      {cancelable: false},
-    );
-  }
-
   const goToProduct = (productId) => navigation.navigate(mainStack.product, {id: productId, type: 'product'});
 
   return (
@@ -206,8 +168,6 @@ function CartScreen(props) {
                 }
               />
               <Container style={styles.footerScrollview}>
-                <Button title='Kupon SHU' onPress={_handleCuponBtn}/>
-                <Button title='Credit' onPress={_handleCreditBtn}/>
                 <Button
                   title={t('cart:text_go_checkout')}
                   onPress={() => {

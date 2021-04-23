@@ -48,6 +48,7 @@ export const mainStack = {
   store_review: 'StoreReviewScreen',
 
   linking_webview: 'LinkingWebviewScreen',
+  linking_webviewKonfirmasiKredit: 'LinkingWebviewKonfirmasiKreditScreen',
   setting: 'SettingScreen',
   help: 'HelpScreen',
   contact: 'ContactScreen',

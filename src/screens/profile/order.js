@@ -11,6 +11,7 @@ import ContainerView from './order/ContainerView';
 import NoteOrder from './order/NoteOrder';
 import ShippingMethod from './order/ShippingMethod';
 import AddressInfo from './order/AddressInfo';
+import { mainStack } from '../../../src/config/navigator';
 
 import {refundOrder} from 'src/modules/order/actions';
 import {refundOrderLoading} from 'src/modules/order/selectors';
@@ -46,11 +47,21 @@ class DetailOrder extends React.Component {
       status: objectStatus(order.status),
     };
   }
+
   handleRefund = () => {
     const {dispatch} = this.props;
     const {order} = this.state;
     const {id, total} = order;
     dispatch(refundOrder(id, total));
+  };
+
+  handleKonfirmasiKredit = () => {
+    const {order} = this.state;
+    const {id} = order;
+    const url = `https://kopebi.com/konfirmasi-sku/?order_id=${id}`
+    this.props.navigation.navigate(mainStack.linking_webviewKonfirmasiKredit, {
+      url: url,
+    });
   };
 
   renderBasic = () => {
@@ -160,6 +171,15 @@ class DetailOrder extends React.Component {
             containerStyle={styles.containerButton}
             loading={refundLoading}
             onPress={this.handleRefund}
+          />
+        )}
+        {order.status === 'kredit' && (
+          <Button
+            title='Konfirmasi Kredit'
+            type="outline"
+            buttonStyle={styles.button}
+            containerStyle={styles.containerButton}
+            onPress={this.handleKonfirmasiKredit}
           />
         )}
       </ContainerView>

@@ -32,6 +32,7 @@ import StoreDetail from 'src/screens/shop/store-detail';
 import StoreReview from 'src/screens/shop/store-review';
 
 import LinkingWebview from 'src/screens/linking-webview';
+import LinkingWebviewKonfirmasiKredit from 'src/screens/linking-webview-konfirmasiKredit';
 
 import SettingScreen from 'src/screens/profile/setting';
 import HelpScreen from 'src/screens/profile/help';
@@ -170,6 +171,11 @@ function MainStack() {
         options={{headerShown: false}}
         name={mainStack.linking_webview}
         component={LinkingWebview}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name={mainStack.linking_webviewKonfirmasiKredit}
+        component={LinkingWebviewKonfirmasiKredit}
       />
       <Stack.Screen
         options={{headerShown: false}}
